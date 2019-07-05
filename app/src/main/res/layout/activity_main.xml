@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp" android:id="@+id/linearLayout">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:minHeight="35sp">
+            <TextView
+                    android:id="@+id/position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Posição:"
+                    android:textSize="15sp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal"
+                    android:layout_alignBaseline="@+id/position"
+                    android:layout_toRightOf="@+id/position" app:layout_constraintStart_toEndOf="@+id/position"
+                    android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent">
+                <RadioButton
+                        android:text="Frente Cortejo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rb_front"
+
+                        android:layout_weight="1"/>
+                <RadioButton
+                        android:text="Traseira Cortejo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:id="@+id/rb_rear"
+                        android:layout_weight="1"/>
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Button
+                    android:text="Iniciar acompanhamento"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_starttracking"
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@color/colorStartTracking"
+                    android:visibility="gone"
+            />
+            <Button
+                    android:text="Pausar acompanhamento"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_pausetracking"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@color/colorPauseTracking"
+                    android:visibility="gone"
+            />
+            <Button
+                    android:text="Terminar Cortejo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_stoptracking"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@color/colorStopTracking"
+                    android:visibility="gone"
+            />
+        </LinearLayout>
+        <org.osmdroid.views.MapView android:id="@+id/map111"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"/>
+    </LinearLayout>
+</RelativeLayout>
